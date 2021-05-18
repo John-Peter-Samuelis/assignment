@@ -1,15 +1,18 @@
 def disemvoweler(str):
-    vowels = ('a', 'e', 'i', 'o', 'u', 'A', 'E','I','O','U')
+    vowStore = ""
+    consonantStore = ""
+    vowels = ('a', 'e', 'i', 'o', 'u')
     for alphabets in str:
         if alphabets in vowels:
-            str = str.replace(" ", "")
-            str = str.replace(alphabets, "")
-    print(str, end=" ")
+            vowStore += alphabets
+            vowStore = vowStore.replace(" ", "")
+        else:
+            consonantStore += alphabets
+            consonantStore = consonantStore.replace(" ", "")
+    print(consonantStore + " " + vowStore)
 
 
 str = input("Enter String: ")
-disemvoweler(str + " ")
-for alphabets in str.lower():
-    if alphabets in 'aeiouAEIOU':
-        print(alphabets, end="")
+disemvoweler(str.lower())
+
 
