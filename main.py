@@ -1,18 +1,12 @@
-def disemvoweler(str):
-    vowStore = ""
-    consonantStore = ""
-    vowels = ('a', 'e', 'i', 'o', 'u')
+def disemvoweler (str):
+    vowels = ('a','e','i','o','u')
+    storeVw = ""
     for alphabets in str:
         if alphabets in vowels:
-            vowStore += alphabets
-            vowStore = vowStore.replace(" ", "")
-        else:
-            consonantStore += alphabets
-            consonantStore = consonantStore.replace(" ", "")
-    print(consonantStore + " " + vowStore)
-
+            storeVw += alphabets
+            str = str.replace(" ", "")
+            str = str.replace(alphabets, "")
+    print (str + " " + storeVw)
 
 str = input("Enter String: ")
-disemvoweler(str.lower())
-
-
+disemvoweler(str)
