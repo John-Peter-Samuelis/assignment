@@ -1,12 +1,8 @@
-def disemvoweler (str):
-    vowels = ('a','e','i','o','u')
-    storeVw = ""
-    for alphabets in str:
-        if alphabets in vowels:
-            storeVw += alphabets
-            str = str.replace(" ", "")
-            str = str.replace(alphabets, "")
-    print (str + " " + storeVw)
+transform = (input("Enter a word: "))
+if any(s.isdigit() for s in transform):
+    raise ValueError("input should be of type 'str'")
 
-str = input("Enter String: ")
-disemvoweler(str)
+transform = transform.lower()
+if transform[0] in "bcdfghjklmnpqrstvwxyz":
+    print("Original Word:", transform)
+    print("Transformed Word:", transform[1:] + transform[0] + "ay")
